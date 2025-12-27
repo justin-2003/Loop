@@ -14,24 +14,19 @@ function Login() {
       setToken(accessToken);
       window.history.replaceState({}, document.title, "/");
       console.log("Authenticated successfully!");
+      fetch("http://127.0.0.1:4000/home/store-token", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ accessToken }),
+      });
     }
   }, []);
 
   const handleLogin = () => {
     window.location.href = "http://127.0.0.1:4000/login";
   };
-
-  // Example: fetch user profile
-  useEffect(() => {
-    if (!token) return;
-
-    fetch("https://api.spotify.com/v1/me", {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((res) => res.json())
-      .then((data) => console.log("User data:", data))
-      .catch((err) => console.error(err));
-  }, [token]);
 
   return (
     <div>

@@ -1,4 +1,5 @@
 import React,{useEffect, useState} from 'react';
+import "./homePage.css";
 
 function HomePage(){
     const [user, setUser] = useState("");
@@ -11,12 +12,16 @@ function HomePage(){
 
     
     return (
-        <div>
+        <div className='home-page'>
+                  <div className='home-card'>
+
             {user ? (
                 <h1>Hi {user.display_name}</h1>
             ) : (
                 <h1>Loading...</h1>
             )}
+  
+        </div>
         </div>
     );
 }

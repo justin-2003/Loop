@@ -1,0 +1,34 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+background-color: #000;
+}
+
+.home-page {
+  height: 100vh; /* full viewport */
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: flex-start; /* align card at top */
+  padding-top: 50px; /* space from top */
+  box-sizing: border-box;
+}
+
+.home-card {
+  background-color: #111;
+  width: 90%;      /* almost full width */
+  height: 100%;     /* almost full height */
+  padding: 40px 60px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  overflow: auto; /* scroll if content is too big */
+}
+
+h1 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}

@@ -10,22 +10,29 @@ function Login() {
     const params = new URLSearchParams(window.location.search);
     const accessToken = params.get("access_token");
 
-    if (accessToken) {
-      setToken(accessToken);
-      window.history.replaceState({}, document.title, "/");
-      console.log("Authenticated successfully!");
-      fetch("http://127.0.0.1:4000/home/store-token", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ accessToken }),
-      });
+    if (!accessToken) {
+      console.log("no Token");
+      return;
     }
-  }, []);
+
+    setToken(accessToken);
+    window.history.replaceState({}, document.title, "/");
+    console.log("Authenticated successfully!");
+
+    fetch("https://loop-gold-pi.vercel.app/home/store-token", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ accessToken }),
+    })
+      .then(res => res.json())
+      .then(data => console.log("Token stored:", data))
+      .catch(err => console.error("Error storing token:", err));
+    }, []);
 
   const handleLogin = () => {
-    window.location.href = "http://127.0.0.1:4000/login";
+    window.location.href = "https://loop-gold-pi.vercel.app/login";
   };
 
   return (

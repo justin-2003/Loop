@@ -16,5 +16,5 @@ app.use("/home", homeRoutes);
 
 
 app.listen(PORT, () =>
-  console.log(`Backend running at http://127.0.0.1:${PORT}`)
+  console.log(`Backend running at port: ${PORT}`)
 );

@@ -6,7 +6,7 @@ dotenv.config();
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const REDIRECT_URI = "https://loop-07er.onrender.com/callback";
-const FRONTEND_URI = "http://127.0.0.1:5173";
+const FRONTEND_URI = "http://loop-gold-pi.vercel.app";
 const SCOPES = [
     "user-read-private",
     "user-read-email",

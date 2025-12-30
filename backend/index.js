@@ -11,7 +11,7 @@ app.use(cors({
   origin: [
     "https://loop-07er.onrender.com",
     "http://127.0.0.1:5173",              // local dev
-    "https://loop-8my7rsutc-justin-2003s-projects.vercel.app"    // Vercel frontend
+    "https://loop-gold-pi.vercel.app"    // Vercel frontend
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Specify allowed methods
   credentials: true

@@ -17,7 +17,6 @@ app.use(cors({
   credentials: true
 }));
 
-app.options("*", cors());
 const PORT = 4000;
 
 //routes
